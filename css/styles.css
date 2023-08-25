@@ -1,0 +1,12 @@
+body{
+    width: auto;
+    background-color: aliceblue;
+    margin: 0;
+}
+
+/* header */
+.header{
+    background-color: red;
+    height: 20px;
+    width: auto;
+}
