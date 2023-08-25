@@ -1,19 +1,160 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="EN">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel = "stylesheet" href = "../css/styles.css">
+
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Language" content="en">
+  <meta name="description" content="A class project for ITE153 Intro to AI and Expert Systems">
+  <title>Curriculum Vitae</title>
+  <meta name="author" content="John Rey Vilbar">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4caf50">
+
+  <!-- Prevent caching of the page -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+
+  <!-- Page styling -->
+  <link rel="stylesheet" href="../style/styles.css">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon/favicon.ico">
+
+
 </head>
+
 <body>
 
-    <!-- HEADER -->
-    <div class="header">
-      jhj
+  <!-- Navbar static -->
+  <div class="navbar">
+    <!-- Navbar animation -->
+    <div class="ocean">
+      <div class="wave upside-down"></div>
+      <div class="wave upside-down"></div>
+      <div class="wave upside-down"></div>
     </div>
-    
 
-    <h1>Hello World</h1>
+    <!-- Sticky navbar -->
+    <div class="navbar-sticky" id="navbar-fading">
+      <div class="logo" id="header-title">Alpha | Early Access</div>
+      <div class="nav-links">
+        <a href="#" class="nav-link home">Home</a>
+        <a href="#" class="nav-link">About</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Title text -->
+  <div class="container-title">
+    <h1 class="project-title">pixelCheck</h1>
+    <!-- Rambling text effect -->
+    <div class="container-ramble">
+      <div class="text-ramble"></div>
+    </div>
+
+  </div>
+
+
+
+<!-- main contents here -->
+
+<div class="fluid-container">
+
+  <div class="left-panel">
+    <!-- Holder for file input -->
+    <div class="card-input">
+
+      <div class="header-input">
+        <h2 class="section-title">Suspected Images</h2>   
+
+        <!-- Label -->
+        <div class="add-label-header" title="Add more images..." onclick="openFileDialog(event)">ADD +</div>
+
+      </div>
+
+
+      <!-- Drag n drop -->
+      <div class="file-input" id="file-input">
+
+        <!-- Initial text -->
+        <div id="initial-state">
+          <img alt="upload image here" class="img-icon" src="images/add_image.png">
+          <div class="file-input-label">Drag and drop image here</div>
+          <div class="file-input-label"><a href="#" id="alt-file-input">Open file...</a></div>
+        </div>
+
+        <!-- Selected images -->
+        <div class="image-roll" id="carousel-container">
+          <div id="carousel" class="carousel">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Panel -->
+  <div class="right-panel">
+
+    <div class="image-section">
+      <!-- Display selected image here -->
+      <div class="photo-container">
+        <div class="patterned-div"></div>
+        <div class="overlay-div" id="input-image"></div>
+      </div>
+
+      <!-- Image details -->
+      <div class="image-details">
+        <h2 class="image-name-label">Image</h2>
+        <div class="image-name" id="image-name">Selected: none</div>
+
+        <!-- Button -->
+        <div class="button-container">
+          <button class="button" id="check-image" onclick="checkImage()">CHECK IMAGE</button>
+        </div>
+
+        <!-- Progress bars -->
+        <div class="result-container">
+          <div class="label">
+            <div class="label-name">REAL</div>
+            <div class="label-percentage">
+              <div class="label-fill" id="real-percentage"></div>
+            </div>
+          </div>
+          
+          <div class="label">
+            <div class="label-name">FAKE</div>
+            <div class="label-percentage">
+              <div class="label-fill" id="fake-percentage"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Footer -->
+  <div class="footer">
+
+    <div class="credits">Powered by Teachable Machine and Firebase</div>
+    <div class="credits">2023 the.encoder.frost</div>
+  
+  </div>
+
+  <!-- Teachable machine dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+
+  <!--JavaScript codes -->
+  <script type="text/javascript" src="script/script.js"></script>
+  <script type="text/javascript" src="script/text_ramble.js"></script>
+  <!-- Teachable machine -->
+  <script type="text/javascript" src="script/teachable_machine.js"></script>
 </body>
+
 </html>
