@@ -63,6 +63,7 @@ body {
     padding-top: 0%;
     padding-bottom: 60px;
     overflow: hidden; /* Add this line */
+    background-color: aquamarine;
 }
 
 
@@ -139,60 +140,9 @@ body {
 }
 
 
-/* wave animation */
-.ocean {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: scaleY(-1);
 
-}
 
-.wave {
-    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
-    position: absolute;
-    bottom: -105px;
-    width: 6400px;
-    height: 198px;
-    animation: wave 10s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
-    transform: translate3d(0, 0, 0) scaleY(-1);
-    z-index: -1; /* Add this line */
-    opacity: 0.7;
-}
 
-.upside-down:nth-of-type(2) {
-    animation: wave 17s cubic-bezier(0.36, 0.45, 0.63, 0.53) -.125s infinite;
-    bottom: -105px;
-    width: 6400px;
-    height: 178px;
-    z-index: -2;
-    opacity: 0.5;
-}
-
-.upside-down:nth-of-type(3) {
-    animation: wave 8s cubic-bezier(0.36, 0.45, 0.63, 0.53) -.125s infinite;
-    bottom: -85px;
-    width: 6400px;
-    height: 210px;
-    z-index: -3;
-    opacity: 0.2;
-}
-
-@keyframes wave {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-1600px);
-    }
-  }
-  
-
-.navbar .wave {
-    filter: hue-rotate(180deg);
-
-}
 
 
 /*------------------------------------------------------------------*/
@@ -202,16 +152,18 @@ body {
     align-items: center;
     height: initial; /* Adjust the height as needed */
     margin-bottom: 50px;
+    background-color: #cceec5;
 }
 
-.project-title {
+.main-title {
     font-family: Montserrat_Bold;
     text-align: center;
     margin-bottom: 0;
     font-size: 50px;
+    white-space: normal;
 }
 
-.container-ramble {
+.subtitle {
     justify-content: center;
     align-items: center;
     display: flex;
@@ -308,22 +260,11 @@ color: #4caf50;
 .header-input {
     width: 100%;
     display: flex;
-    justify-content: end;
+    flex-direction: row;
     -webkit-user-select: none;
     user-select: none;
 }
 
-.add-label-header {
-    margin-bottom: 20px;
-    margin-top: auto;
-    margin-left: auto;
-    font-size: medium;
-    font-family: Montserrat_Medium;
-    border-bottom: 5px solid #4caf50;
-    text-decoration: none;
-    cursor: pointer;
-    visibility: hidden;
-}
 
 .file-input {
     border-color: #afafaf;
