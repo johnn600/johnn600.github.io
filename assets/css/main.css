@@ -14,9 +14,22 @@
 
 .ds-info-list-section ul li.bullet{ width: 50%;font-size: 1.125rem; margin-bottom: 10px }
 
+/* superscript */
 sup{
 	font-size: 0.7em;
 	margin-left: 3px;
+}
+
+.cv-button{
+	margin-top: 3%;
+	border-radius: 10px;
+	margin-right: 0;
+
+}
+
+.cv-button:hover{
+	background-color: #000;
+	color: #fff;
 }
 
 
