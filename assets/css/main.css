@@ -1,3 +1,20 @@
+/* additional codes by John Rey Vilbar */
+
+.underlined{
+	border-bottom: 2px solid transparent;
+	border-bottom-color: black;
+    border-bottom-width: 5px;
+	width: max-content;
+}
+
+.details{
+	margin-left: 65px;
+	margin-top: 0px;
+	width: max-content;
+}
+
+.ds-info-list-section ul li.bullet{ width: 50%;font-size: 1.125rem; margin-bottom: 10px }
+
 /*
 Theme Name: Joana Mertz
 
@@ -64,10 +81,10 @@ svg,img { max-width: 100%; height: auto; }
 .ds-info-sectio-wrp{ padding-left:2.5rem  }
 .ds-info-sectio p,.ds-project-details p{font-size: 1.125rem; line-height: 2.25rem; margin-bottom: 20px}
 
-.ds-info-list-section{ margin-top:5.625rem  }
-.ds-info-list-section h3{font-size: 1.125rem;font-weight: 600; margin-bottom: 25px}
+.ds-info-list-section{ margin-top:3.425rem  }
+.ds-info-list-section h3{font-size: 1.425rem;font-weight: 600; margin-bottom: 25px}
 .ds-info-list-section ul{ list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: space-between; }
-.ds-info-list-section ul li{ width: 50%;font-size: 1.125rem; margin-bottom: 10px }
+.ds-info-list-section ul li{ width: 100%;font-size: 1.125rem; margin-bottom: 10px }
 .ds-info-list-section ul li a{ text-decoration: underline; }
 .ds-info-list-section ul li a:hover{ text-decoration: none; color: #000 }
 
