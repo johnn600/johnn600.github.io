@@ -41,6 +41,39 @@ function navHighlighter() {
       scrollY <= sectionTop + sectionHeight
     ){
       document.querySelector("section#"+sectionId).classList.add("section-active");
+
+      //change the image src of image element with id "display-image" based on the section id
+      //use switch case
+        switch(sectionId){
+            case "personal":
+                document.getElementById("display-image").src = "../assets/images/profile.png";
+                break;
+            case "education":
+                document.getElementById("display-image").src = "../assets/images/profile.png";
+                break;
+            case "skills":
+                document.getElementById("display-image").src = "../assets/images/skills.png";
+                break;
+            case "achievements":
+                document.getElementById("display-image").src = "../assets/images/achievements.jpg";
+                break;
+            case "grants":
+                document.getElementById("display-image").src = "../assets/images/grants.jpg";
+                break;
+            case "awards":
+                document.getElementById("display-image").src = "../assets/images/awards.png";
+                break;
+            case "affiliations":
+                document.getElementById("display-image").src = "../assets/images/affiliations.png";
+                break;
+            case "events":
+                document.getElementById("display-image").src = "../assets/images/events.png";
+                break;
+            default:
+                document.getElementById("display-image").src = "assets/images/profile.png";
+        }
+
+
     } else {
         document.querySelector("section#"+sectionId).classList.remove("section-active");
     }

@@ -49,9 +49,20 @@ sup{
 	background-color: #ececec;
 	border: none;
 	border-radius: 10px;
-	padding-left: 20px;
 	transition: all 0.3s ease-in-out;
 }
+
+img{
+	transition: opacity 0.5s;
+	width: inherit;
+}
+
+@media (min-width: 992px) {
+	.section-active{
+		padding-left: 20px;
+	}
+}
+
 
 /*
 Theme Name: Joana Mertz
