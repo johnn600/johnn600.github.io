@@ -4,7 +4,7 @@
 	border-bottom: 2px solid transparent;
 	border-bottom-color: black;
     border-bottom-width: 5px;
-	width: max-content;
+	width: auto;
 }
 
 .ds-info-list-section ul li.details{
@@ -26,7 +26,32 @@ sup{
 
 }
 
+.section-skills{
+	width: auto;
+	font-size: var(--font_16);
+	border-left: 5px solid #202020;
+	padding: 10px 15px;
+	margin-bottom: 100px;
+	display: flex;
+	flex-direction: column;
+	transition: all 0.3s ease-in-out;
+}
 
+.section-skills :nth-child(1){
+	margin-bottom: 30px;
+}
+
+.section-skills:hover{
+	background-color: #e7e7e7;
+}
+
+.section-active{
+	background-color: #ececec;
+	border: none;
+	border-radius: 10px;
+	padding-left: 20px;
+	transition: all 0.3s ease-in-out;
+}
 
 /*
 Theme Name: Joana Mertz
@@ -94,7 +119,7 @@ svg,img { max-width: 100%; height: auto; }
 .ds-info-sectio-wrp{ padding-left:2.5rem  }
 .ds-info-sectio p,.ds-project-details p{font-size: 1.125rem; line-height: 2.25rem; margin-bottom: 20px}
 
-.ds-info-list-section{ margin-top:3.425rem  }
+.ds-info-list-section{ margin-top:3.425rem; transition: all 0.3s ease-in-out; padding-top: 20px; padding-bottom: 20px;}
 .ds-info-list-section h3{font-size: 1.425rem;font-weight: 600; margin-bottom: 10px}
 .ds-info-list-section ul{ list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: space-between; }
 .ds-info-list-section ul li{ width: 100%;font-size: 1.125rem; margin-bottom: 0px }
