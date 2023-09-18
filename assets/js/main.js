@@ -30,7 +30,6 @@ function navHighlighter() {
     const sectionTop = current.offsetTop - 150;
     sectionId = current.getAttribute("id");
 
-    console.log(sectionId);
     
     /*
     - If our current scroll position enters the space where current section on screen is, add .active class to corresponding navigation link, else remove it
@@ -47,27 +46,64 @@ function navHighlighter() {
         switch(sectionId){
             case "personal":
                 document.getElementById("display-image").src = "../assets/images/profile.png";
+                document.getElementById("caption").innerHTML = "Hi, it's me Johnn!";
                 break;
             case "education":
                 document.getElementById("display-image").src = "../assets/images/profile.png";
+                document.getElementById("caption").innerHTML = "Hi, it's me Johnn!";
                 break;
             case "skills":
                 document.getElementById("display-image").src = "../assets/images/skills.png";
+                document.getElementById("caption").innerHTML = "EN-coder";
                 break;
             case "achievements":
                 document.getElementById("display-image").src = "../assets/images/achievements.jpg";
+                document.getElementById("caption").innerHTML = "Awarded by JITS President Nina Rose Sebial";
                 break;
             case "grants":
-                document.getElementById("display-image").src = "../assets/images/grants.jpg";
+                document.getElementById("display-image").src = "../assets/images/scholars.png";
+                document.getElementById("caption").innerHTML = "Ongoing scholars of DOST XII (at RSTW 2023)";
+                break;
+            case "certifications":
+                document.getElementById("display-image").src = "../assets/images/badges.png";
+                document.getElementById("caption").innerHTML = "Badges awarded by Cisco Networking Academy";
                 break;
             case "awards":
                 document.getElementById("display-image").src = "../assets/images/awards.png";
+                document.getElementById("caption").innerHTML = "Project VacSINEation, Best in Musical Score Award";
                 break;
             case "affiliations":
                 document.getElementById("display-image").src = "../assets/images/affiliations.png";
+                document.getElementById("caption").innerHTML = "Committee on Students' Rights and Welfare";
                 break;
             case "events":
-                document.getElementById("display-image").src = "../assets/images/events.png";
+                /*
+                const images = [
+                    {
+                        src: "../assets/images/google_io.png",
+                        caption: "Google I/O Extended Davao 2023, Attendee"
+                    },
+                    {
+                        src: "../assets/images/boot_camp.jpg",
+                        caption: "DOST SEI Scholars Leadership Boot Camp (Butuan City)"
+                    }
+                ]
+
+
+                let i = 0;
+                setInterval(function(){
+                    document.getElementById("display-image").src = images[i].src;
+                    document.getElementById("caption").innerHTML = images[i].caption;
+                    i++;
+                    if(i == images.length){
+                        i = 0;
+                    }
+
+                }, 4000);
+                */
+
+                document.getElementById("display-image").src = "../assets/images/ylac.png";
+                document.getElementById("caption").innerHTML = "Youth Leaders of Agribusiness Congress 2023 (at SEARCA)";
                 break;
             default:
                 document.getElementById("display-image").src = "assets/images/profile.png";
