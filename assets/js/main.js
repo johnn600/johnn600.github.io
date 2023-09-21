@@ -12,6 +12,17 @@ jQuery(document).ready(function($) {
 
 });
 
+//function for copying text to clipboard
+function copyToClipboard(){
+    var email = document.getElementById("emailText");
+    navigator.clipboard.writeText(email.innerText);
+
+    //change the class of the button to solid
+    var button = document.getElementById("copyButton");
+    button.classList.remove("fa-regular");
+    button.classList.add("fa-solid");
+}
+
 
 //reference: https://codepen.io/dbilanoski/pen/LabpzG?editors=1111
 const sections = document.querySelectorAll("section[id]");
@@ -46,35 +57,27 @@ function navHighlighter() {
         switch(sectionId){
             case "personal":
                 document.getElementById("display-image").src = "../assets/images/profile.png";
-                document.getElementById("caption").innerHTML = "Hi, it's me Johnn!";
                 break;
             case "education":
                 document.getElementById("display-image").src = "../assets/images/profile.png";
-                document.getElementById("caption").innerHTML = "Hi, it's me Johnn!";
                 break;
             case "skills":
                 document.getElementById("display-image").src = "../assets/images/skills.png";
-                document.getElementById("caption").innerHTML = "EN-coder";
                 break;
             case "achievements":
                 document.getElementById("display-image").src = "../assets/images/achievements.jpg";
-                document.getElementById("caption").innerHTML = "Awarded by JITS President Nina Rose Sebial";
                 break;
             case "grants":
                 document.getElementById("display-image").src = "../assets/images/scholars.png";
-                document.getElementById("caption").innerHTML = "Ongoing scholars of DOST XII (at RSTW 2023)";
                 break;
             case "certifications":
                 document.getElementById("display-image").src = "../assets/images/badges.png";
-                document.getElementById("caption").innerHTML = "Badges awarded by Cisco Networking Academy";
                 break;
             case "awards":
                 document.getElementById("display-image").src = "../assets/images/awards.png";
-                document.getElementById("caption").innerHTML = "Project VacSINEation, Best in Musical Score Award";
                 break;
             case "affiliations":
                 document.getElementById("display-image").src = "../assets/images/affiliations.png";
-                document.getElementById("caption").innerHTML = "Committee on Students' Rights and Welfare";
                 break;
             case "events":
                 /*
