@@ -80,30 +80,6 @@ function navHighlighter() {
                 document.getElementById("display-image").src = "../assets/images/affiliations.png";
                 break;
             case "events":
-                /*
-                const images = [
-                    {
-                        src: "../assets/images/google_io.png",
-                        caption: "Google I/O Extended Davao 2023, Attendee"
-                    },
-                    {
-                        src: "../assets/images/boot_camp.jpg",
-                        caption: "DOST SEI Scholars Leadership Boot Camp (Butuan City)"
-                    }
-                ]
-
-
-                let i = 0;
-                setInterval(function(){
-                    document.getElementById("display-image").src = images[i].src;
-                    document.getElementById("caption").innerHTML = images[i].caption;
-                    i++;
-                    if(i == images.length){
-                        i = 0;
-                    }
-
-                }, 4000);
-                */
 
                 document.getElementById("display-image").src = "../assets/images/ylac.png";
                 document.getElementById("caption").innerHTML = "Youth Leaders of Agribusiness Congress 2023 (at SEARCA)";
