@@ -5,7 +5,7 @@ import { Section } from "../layout/section";
 
 export function ProjectsSection() {
   return (
-    <Section id="projects" title="Projects" icon={FolderOpen}>
+    <Section id="projects" title="Projects" icon={FolderOpen} color="pink">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {PROJECTS.map((p, i) => (
           <a

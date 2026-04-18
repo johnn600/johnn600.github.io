@@ -5,7 +5,7 @@ import { Section } from "../layout/section";
 
 export function AchievementsSection() {
   return (
-    <Section id="achievements" title="Achievements" icon={Trophy}>
+    <Section id="achievements" title="Achievements" icon={Trophy} color="amber">
       <div className="space-y-3">
         {ACHIEVEMENTS.map((a, i) => (
           <div key={i} className="flex items-start justify-between gap-3">

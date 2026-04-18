@@ -4,7 +4,7 @@ import { Section } from "../layout/section";
 
 export function CertificationsSection() {
   return (
-    <Section id="certifications" title="Certifications" icon={BookOpen}>
+    <Section id="certifications" title="Certifications" icon={BookOpen} color="violet">
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         {CERTIFICATIONS.map((c, i) => (
           <a

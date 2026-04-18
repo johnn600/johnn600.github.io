@@ -5,7 +5,7 @@ import { Section } from "../layout/section";
 
 export function ScholarshipsSection() {
   return (
-    <Section id="scholarships" title="Grants & Scholarships" icon={Award}>
+    <Section id="scholarships" title="Grants & Scholarships" icon={Award} color="emerald">
       <div className="space-y-4">
         {SCHOLARSHIPS.map((s, i) => (
           <div key={i} className="flex items-start justify-between gap-3">
