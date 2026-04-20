@@ -1,7 +1,22 @@
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Code2, Download, Mail, MapPin, Globe, Briefcase, Code, Play, Music } from "lucide-react";
-import { DB_LANGUAGES, PROFILE, SKILLS } from "@/lib/portfolio-data";
+import {
+  Code2,
+  Download,
+  Mail,
+  MapPin,
+  Globe,
+  Briefcase,
+  Code,
+  Play,
+  Music,
+} from "lucide-react";
+import {
+  DB_LANGUAGES,
+  PROFILE,
+  SKILLS,
+} from "@/lib/portfolio-data";
 
 const SOCIAL_ICONS: Record<string, React.ReactNode> = {
   Facebook: <Globe className="size-3.5" />,
@@ -13,30 +28,40 @@ const SOCIAL_ICONS: Record<string, React.ReactNode> = {
 
 export function HeroSection() {
   return (
-    <section className="grid grid-cols-1 items-center gap-10 py-12 lg:grid-cols-[1fr_320px]">
+    <section className="grid grid-cols-1 items-center gap-2 lg:gap-10 py-12 lg:grid-cols-[1fr_320px]">
       {/* ── Left: Hero copy ── */}
       <div className="flex flex-col justify-center">
         {/* Status badge */}
-        <Badge variant="outline" className="mb-8 mx-auto md:mx-0 w-fit gap-2 border-emerald-200 bg-emerald-50 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-400">
+        <Badge
+          variant="outline"
+          className="mb-8 mx-auto lg:mx-0 w-fit gap-2 border-emerald-200 bg-emerald-50 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-400"
+        >
           <span className="size-1.5 animate-pulse rounded-full bg-emerald-500" />
           {PROFILE.tagline}
         </Badge>
 
         {/* Display headline */}
-        <h1 className="mb-6 text-5xl text-center md:text-right font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-          Hi,<br />
-          <span className="text-foreground">Nice to meet you!</span><br />
+        <h1 className="mb-6 text-4xl text-center lg:text-right font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+          Hi,
+          <br />
+          <span className="text-foreground">Nice to meet you!</span>
+          <br />
         </h1>
 
         {/* Bio */}
-        <p className="mb-7 text-base text-justify md:text-right leading-relaxed text-muted-foreground">
+        <p className="mb-7 text-base text-justify lg:text-right leading-relaxed text-muted-foreground">
           {PROFILE.bio}
         </p>
 
         {/* Social pills */}
-        <div className="mb-8 flex flex-wrap justify-center md:justify-end gap-1.5">
+        <div className="mb-8 flex flex-wrap justify-center lg:justify-end gap-1.5">
           {PROFILE.socials.map((s) => (
-            <Badge key={s.label} variant="secondary" className="gap-1.5 cursor-pointer transition-all bg-accent-foreground/10 hover:border-foreground " asChild>
+            <Badge
+              key={s.label}
+              variant="secondary"
+              className="gap-1.5 cursor-pointer transition-all border-2 hover:border-foreground"
+              asChild
+            >
               <a href={s.url} target="_blank" rel="noopener noreferrer">
                 {SOCIAL_ICONS[s.label]}
                 {s.label}
@@ -46,14 +71,23 @@ export function HeroSection() {
         </div>
 
         {/* CTAs */}
-        <div className="flex flex-wrap justify-center md:justify-end gap-3">
-          <Button asChild size="lg" className="gap-2 shadow-none rounded-3xl bg-emerald-700">
+        <div className="hidden lg:flex flex-wrap justify-center lg:justify-end gap-3">
+          <Button
+            asChild
+            size="lg"
+            className="gap-2 shadow-none rounded-3xl bg-emerald-700"
+          >
             <a href={PROFILE.cvUrl} target="_blank" rel="noopener noreferrer">
               <Download className="size-4" />
               Download CV
             </a>
           </Button>
-          <Button asChild variant="outline" size="lg" className="gap-2 rounded-3xl">
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="gap-2 rounded-3xl"
+          >
             <a href={`mailto:${PROFILE.email}`}>
               <Mail className="size-4" />
               Get in Touch
@@ -62,7 +96,7 @@ export function HeroSection() {
         </div>
 
         {/* Contact meta */}
-        <div className="mt-8 flex flex-wrap items-center justify-center md:justify-end gap-6 border-t border-border pt-6 text-xs text-muted-foreground">
+        <div className="mt-8 hidden lg:flex flex-wrap items-center justify-center md:justify-end gap-6 border-t border-border pt-6 text-xs text-muted-foreground">
           <span className="flex items-center gap-1.5">
             <MapPin className="size-3.5 shrink-0" />
             {PROFILE.location}
@@ -82,18 +116,91 @@ export function HeroSection() {
       {/* ── Right: Photo design element + Skills card ── */}
       <div className="flex flex-col gap-4 lg:sticky lg:top-6">
 
-        {/* Photo as styled editorial element */}
-        <div className="relative overflow-hidden rounded-3xl bg-primary/5">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={PROFILE.photo}
-            alt={PROFILE.name}
-            className="w-full object-cover object-top"
-            style={{ aspectRatio: "3/4", maxHeight: "380px" }}
-          />
+        {/* Photo — compact profile card on mobile (< lg) */}
+        <div className="lg:hidden rounded-3xl border-none bg-card flex gap-4 items-stretch">
+          {/* Small photo */}
+          <div className="relative shrink-0 w-44 overflow-hidden rounded-3xl border border-border bg-primary/5">
+            <AspectRatio ratio={1 / 1}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={PROFILE.photo}
+                alt={PROFILE.name}
+                className="w-full h-full object-cover object-top"
+              />
+            </AspectRatio>
+          </div>
+          {/* Info */}
+          <div className="flex flex-col justify-between flex-1 min-w-0">
+            <div>
+              <p className="font-bold text-xl leading-tight">
+                {PROFILE.name}
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                {PROFILE.headline}
+              </p>
+            </div>
+            {/* Stats row */}
+            <div className="flex flex-col gap-2">
+              <span className="flex items-center gap-1.5 min-w-0">
+                <MapPin className="size-3.5 shrink-0" />
+                <span className="truncate text-xs">{PROFILE.location}</span>
+              </span>
+              <span className="flex items-center gap-1.5 min-w-0">
+                <Mail className="size-3.5 shrink-0" />
+                <a
+                  href={`mailto:${PROFILE.email}`}
+                  className="truncate text-xs transition-colors hover:text-foreground"
+                >
+                  {PROFILE.email}
+                </a>
+              </span>
+            </div>
+            {/* Action buttons */}
+            <div className="flex gap-2 mt-2">
+              <Button
+                asChild
+                size="sm"
+                className="flex-1 gap-1.5 rounded-xl text-xs h-8 shadow-none bg-emerald-700"
+              >
+                <a
+                  href={PROFILE.cvUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Download className="size-3" />
+                  CV
+                </a>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="sm"
+                className="flex-1 gap-1.5 rounded-xl text-xs h-8"
+              >
+                <a href={`mailto:${PROFILE.email}`}>
+                  <Mail className="size-3" />
+                  Contact
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Photo — full editorial square on lg+ */}
+        <div className="hidden lg:block relative overflow-hidden rounded-3xl bg-primary/5">
+          <AspectRatio ratio={1 / 1} className="w-full">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={PROFILE.photo}
+              alt={PROFILE.name}
+              className="w-full h-full object-cover object-top"
+            />
+          </AspectRatio>
           {/* Identity gradient overlay */}
-          <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/75 via-black/30 to-transparent p-4 pt-12">
-            <p className="text-sm font-bold leading-tight text-white">{PROFILE.name}</p>
+          <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/85 via-black/30 to-transparent p-4 pt-12">
+            <p className="text-lg font-bold leading-tight text-white">
+              {PROFILE.name}
+            </p>
             <div className="mt-2 flex flex-wrap gap-1">
               {PROFILE.headline.split(" · ").map((part) => (
                 <span
@@ -124,8 +231,11 @@ export function HeroSection() {
               </Badge>
             ))}
           </div>
+
           <div className="border-t border-border/60 pt-3">
-            <p className="mb-1.5 text-[11px] font-medium text-muted-foreground">Databases</p>
+            <p className="mb-1.5 text-[11px] font-medium text-muted-foreground">
+              Databases
+            </p>
             <div className="flex flex-wrap gap-1">
               {DB_LANGUAGES.map((db) => (
                 <Badge key={db} variant="outline" className="text-[11px]">
@@ -135,7 +245,6 @@ export function HeroSection() {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
