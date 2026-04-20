@@ -8,9 +8,9 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
+    <nav className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur-lg">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <span className="flex items-center gap-1.5 text-sm font-bold tracking-tight">
+        <span className="flex items-center w-full md:w-fit justify-center md:justify-baseline gap-1.5 text-sm font-bold tracking-tight select-none">
           {["Code", "Play", "Listen", "Go"].map((word, i) => (
             <span key={word} className="flex items-center gap-1.5">
               {i > 0 && <span className="font-normal text-muted-foreground">–</span>}
@@ -18,7 +18,7 @@ export function Navbar() {
             </span>
           ))}
         </span>
-        <div className="hidden items-center gap-6 text-sm font-medium text-muted-foreground sm:flex">
+        <div className="hidden items-center gap-6 text-sm font-medium text-muted-foreground md:flex">
           {links.map((link) => (
             <a
               key={link.href}

@@ -27,10 +27,10 @@ interface SectionProps {
 export function Section({ id, title, icon: Icon, color, children }: SectionProps) {
   const { bg, text } = accents[color];
   return (
-    <Card id={id} className="scroll-mt-20">
+    <Card id={id} className="scroll-mt-20 group">
       <CardHeader className="pb-3">
         <CardTitle className="flex items-center justify-between gap-4">
-          <span className={cn("text-xl font-bold")}>{title}</span>
+          <span className={cn("text-xl font-bold underline underline-offset-2 decoration-2 group-hover:scale-105 transition-all duration-200 ease-in-out")}>{title}</span>
           <span className={cn("flex size-10 shrink-0 items-center justify-center rounded-full", bg, text)}>
             <Icon className="size-5" />
           </span>
