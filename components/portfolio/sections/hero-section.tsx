@@ -1,6 +1,7 @@
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { GradientText } from "@/components/animations/gradient-text";
 import {
   Code2,
   Download,
@@ -44,7 +45,7 @@ export function HeroSection() {
         <h1 className="mb-6 text-4xl text-center lg:text-right font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
           Hi,
           <br />
-          <span className="text-foreground">Nice to meet you!</span>
+          <GradientText>Nice to meet you!</GradientText>
           <br />
         </h1>
 
