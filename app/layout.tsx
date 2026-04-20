@@ -10,7 +10,7 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: "John Rey Vilbar – Portfolio",
-  description: "Portfolio of John Rey Arugay Vilbar – CODE, PLAY, LISTEN, GO",
+  description: "Portfolio of John Rey Vilbar – CODE, PLAY, LISTEN, GO",
 };
 
 export default function RootLayout({
