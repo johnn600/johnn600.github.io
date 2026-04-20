@@ -30,7 +30,7 @@ export function Section({ id, title, icon: Icon, color, children }: SectionProps
     <Card id={id} className="scroll-mt-20">
       <CardHeader className="pb-3">
         <CardTitle className="flex items-center justify-between gap-4">
-          <span className={cn("text-xl font-bold")}>{title}</span>
+          <span className={cn("text-xl font-bold underline underline-offset-2 decoration-2")}>{title}</span>
           <span className={cn("flex size-10 shrink-0 items-center justify-center rounded-full", bg, text)}>
             <Icon className="size-5" />
           </span>

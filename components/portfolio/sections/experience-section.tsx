@@ -23,7 +23,7 @@ export function ExperienceSection() {
               <div>
                 <h3 className="text-sm font-semibold leading-snug">{exp.role}</h3>
                 <p className="text-xs font-medium text-primary">{exp.org}</p>
-                <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{exp.description}</p>
+                <p className="mt-1 text-xs leading-relaxed text-muted-foreground text-justify">{exp.description}</p>
               </div>
               <Badge
                 variant={exp.current ? "default" : "outline"}

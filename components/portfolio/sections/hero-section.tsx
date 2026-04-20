@@ -1,7 +1,15 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Code2, Download, Mail, MapPin } from "lucide-react";
+import { Code2, Download, Mail, MapPin, Globe, Briefcase, Code, Play, Music } from "lucide-react";
 import { DB_LANGUAGES, PROFILE, SKILLS } from "@/lib/portfolio-data";
+
+const SOCIAL_ICONS: Record<string, React.ReactNode> = {
+  Facebook: <Globe className="size-3.5" />,
+  LinkedIn: <Briefcase className="size-3.5" />,
+  GitHub: <Code className="size-3.5" />,
+  YouTube: <Play className="size-3.5" />,
+  Spotify: <Music className="size-3.5" />,
+};
 
 export function HeroSection() {
   return (
@@ -9,16 +17,15 @@ export function HeroSection() {
       {/* ── Left: Hero copy ── */}
       <div className="flex flex-col justify-center">
         {/* Status badge */}
-        <div className="mb-8 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-400">
+        <Badge variant="outline" className="mb-8 mx-auto md:mx-0 w-fit gap-2 border-emerald-200 bg-emerald-50 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-400">
           <span className="size-1.5 animate-pulse rounded-full bg-emerald-500" />
-          Ready when you are!
-        </div>
+          {PROFILE.tagline}
+        </Badge>
 
         {/* Display headline */}
         <h1 className="mb-6 text-5xl text-center md:text-right font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-          Hi, I&rsquo;m a<br />
-          <span className="text-foreground">developer</span><br />
-          <span className="text-foreground">&amp; designer</span>
+          Hi,<br />
+          <span className="text-foreground">Nice to meet you!</span><br />
         </h1>
 
         {/* Bio */}
@@ -29,27 +36,24 @@ export function HeroSection() {
         {/* Social pills */}
         <div className="mb-8 flex flex-wrap justify-center md:justify-end gap-1.5">
           {PROFILE.socials.map((s) => (
-            <a
-              key={s.label}
-              href={s.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-border px-3 py-1 text-xs font-medium text-muted-foreground transition-all hover:border-foreground hover:bg-accent hover:text-foreground"
-            >
-              {s.label}
-            </a>
+            <Badge key={s.label} variant="secondary" className="gap-1.5 cursor-pointer transition-all bg-accent-foreground/10 hover:border-foreground " asChild>
+              <a href={s.url} target="_blank" rel="noopener noreferrer">
+                {SOCIAL_ICONS[s.label]}
+                {s.label}
+              </a>
+            </Badge>
           ))}
         </div>
 
         {/* CTAs */}
         <div className="flex flex-wrap justify-center md:justify-end gap-3">
-          <Button asChild size="lg" className="gap-2 shadow-sm">
+          <Button asChild size="lg" className="gap-2 shadow-none rounded-3xl bg-emerald-700">
             <a href={PROFILE.cvUrl} target="_blank" rel="noopener noreferrer">
               <Download className="size-4" />
               Download CV
             </a>
           </Button>
-          <Button asChild variant="outline" size="lg" className="gap-2">
+          <Button asChild variant="outline" size="lg" className="gap-2 rounded-3xl">
             <a href={`mailto:${PROFILE.email}`}>
               <Mail className="size-4" />
               Get in Touch
@@ -90,7 +94,6 @@ export function HeroSection() {
           {/* Identity gradient overlay */}
           <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/75 via-black/30 to-transparent p-4 pt-12">
             <p className="text-sm font-bold leading-tight text-white">{PROFILE.name}</p>
-            <p className="mt-0.5 text-[11px] text-white/70">{PROFILE.tagline}</p>
             <div className="mt-2 flex flex-wrap gap-1">
               {PROFILE.headline.split(" · ").map((part) => (
                 <span
