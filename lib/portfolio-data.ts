@@ -71,7 +71,7 @@ export interface ProjectItem {
 // ─── Data ─────────────────────────────────────────────────────────────────
 
 export const PROFILE = {
-  name: "John Rey Arugay Vilbar",
+  name: "John Rey Vilbar",
   headline: "BS Information Technology · Cum Laude",
   tagline: "Junior Software Developer",
   bio: "An Information Technology professional aiming to improve their skills and contribute to nation building through constant experimentation and exploration of newfound knowledge. Experienced in Web Development, Test Automation, Web Scraping, Graphics Design, and Music Production.",
@@ -103,23 +103,23 @@ export const DB_LANGUAGES: string[] = ["SQLite", "MySQL", "PostgreSQL"];
 
 export const EXPERIENCE: ExperienceItem[] = [
   {
-    role: "Project Technical Assistant V",
+    role: "Project Technical Assistant",
     org: "DOST PCAARRD (through MSU Gensan)",
-    description: "Shrimp traceability project for Sarangani and General Santos area using blockchain.",
+    description: "Serving as a technical assistant & blockchain developer under the DOST-PCAARRD-funded research project (implemented by MSU-GenSan) focusing on blockchain integration and shrimp product traceability.",
     period: "Jul 2025 – Present",
     current: true,
   },
   {
     role: "Junior Software Developer",
     org: "inriver Philippines",
-    description: "Web scraping, code refactoring and testing, QA test automation, team collaboration, preparing daily technical reports, and monitoring and maintenance of data stored on Microsoft Azure.",
+    description: "I worked on web scraping, code refactoring and testing, QA test automation, team collaboration, preparing daily technical reports, and monitoring and maintaining collected data.",
     period: "Aug 2024 – Jun 2025",
     current: false,
   },
   {
     role: "Intern",
     org: "General Santos City Water District",
-    description: "Developed a proof of concept custom online mapping GIS web application using open-source frameworks in Next.js integrating Microsoft Bing Maps.",
+    description: "Our team developed a proof of concept custom geographical information system (GIS) for General Santos City Water District built on top of available open-source frameworks. I was responsible for tracking the overall progress of the system and implemented the core mapping features.",
     period: "Jan – May 2024",
     current: false,
   },
@@ -127,7 +127,7 @@ export const EXPERIENCE: ExperienceItem[] = [
 
 export const EDUCATION: EducationItem[] = [
   {
-    level: "Undergraduate",
+    level: "College",
     degree: "Bachelor of Science in Information Technology",
     major: "Database Major",
     school: "Mindanao State University – General Santos",
