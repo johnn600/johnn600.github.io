@@ -119,7 +119,7 @@ export function HeroSection() {
         {/* Photo — compact profile card on mobile (< lg) */}
         <div className="lg:hidden rounded-3xl border-none bg-card flex gap-4 items-stretch">
           {/* Small photo */}
-          <div className="relative shrink-0 w-44 overflow-hidden rounded-3xl border border-border bg-primary/5">
+          <div className="relative shrink-0 w-36 overflow-hidden rounded-3xl border border-border bg-primary/5">
             <AspectRatio ratio={1 / 1}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -187,25 +187,27 @@ export function HeroSection() {
         </div>
 
         {/* Photo — full editorial square on lg+ */}
-        <div className="hidden lg:block relative overflow-hidden rounded-3xl bg-primary/5">
-          <AspectRatio ratio={1 / 1} className="w-full">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={PROFILE.photo}
-              alt={PROFILE.name}
-              className="w-full h-full object-cover object-top"
-            />
-          </AspectRatio>
-          {/* Identity gradient overlay */}
-          <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/85 via-black/30 to-transparent p-4 pt-12">
-            <p className="text-lg font-bold leading-tight text-white">
+        <div className="hidden lg:flex flex-col gap-3">
+          <div className="relative overflow-hidden rounded-3xl bg-primary/5 border border-border">
+            <AspectRatio ratio={1 / 1} className="w-full">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={PROFILE.photo}
+                alt={PROFILE.name}
+                className="w-full h-full object-cover object-top"
+              />
+            </AspectRatio>
+          </div>
+          {/* Identity info below photo */}
+          <div className="px-1">
+            <p className="text-xl font-bold leading-tight">
               {PROFILE.name}
             </p>
-            <div className="mt-2 flex flex-wrap gap-1">
+            <div className="mt-2 flex flex-wrap gap-2">
               {PROFILE.headline.split(" · ").map((part) => (
                 <span
                   key={part}
-                  className="rounded-sm bg-white/20 px-1.5 py-0.5 text-[10px] font-medium text-white backdrop-blur-sm"
+                  className="rounded bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground"
                 >
                   {part}
                 </span>
